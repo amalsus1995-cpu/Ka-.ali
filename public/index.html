@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>بيتكوين كاش - الاستثمار</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+  <div class="app">
+
+    <div class="header">
+      <div class="logo">Bitcoin Cash</div>
+      <div class="user-box">
+        <div class="user-dot"></div>
+        <span id="userName">جاري التحميل...</span>
+      </div>
+    </div>
+
+    <div class="balance-card">
+      <div class="balance-title">إجمالي الاستثمارات الموافق عليها</div>
+      <div class="balance-value" id="totalInvestments">0.00 USDT</div>
+      <div class="network-pill">
+        <div class="network-dot"></div>
+        <span>استثمار USDT - شبكة TRC20</span>
+      </div>
+    </div>
+
+    <div class="section-title">خطط الاستثمار</div>
+
+    <div class="plans">
+
+      <div class="plan-card">
+        <div class="plan-amount">10 USDT</div>
+        <div class="plan-row">
+          <span>المدة:</span><span>40 - 50 يوم</span>
+        </div>
+        <div class="plan-row">
+          <span>الربح:</span><span class="profit-highlight">+80%</span>
+        </div>
+        <button class="plan-button" onclick="openInvestmentModal(10)">استثمر</button>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-amount">50 USDT</div>
+        <div class="plan-row">
+          <span>المدة:</span><span>40 - 50 يوم</span>
+        </div>
+        <div class="plan-row">
+          <span>الربح:</span><span class="profit-highlight">+80%</span>
+        </div>
+        <button class="plan-button" onclick="openInvestmentModal(50)">استثمر</button>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-amount">100 USDT</div>
+        <div class="plan-row">
+          <span>المدة:</span><span>40 - 50 يوم</span>
+        </div>
+        <div class="plan-row">
+          <span>الربح:</span><span class="profit-highlight">+80%</span>
+        </div>
+        <button class="plan-button" onclick="openInvestmentModal(100)">استثمر</button>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-amount">150 USDT</div>
+        <div class="plan-row">
+          <span>المدة:</span><span>40 - 50 يوم</span>
+        </div>
+        <div class="plan-row">
+          <span>الربح:</span><span class="profit-highlight">+80%</span>
+        </div>
+        <button class="plan-button" onclick="openInvestmentModal(150)">استثمر</button>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-amount">200 USDT</div>
+        <div class="plan-row">
+          <span>المدة:</span><span>40 - 50 يوم</span>
+        </div>
+        <div class="plan-row">
+          <span>الربح:</span><span class="profit-highlight">+80%</span>
+        </div>
+        <button class="plan-button" onclick="openInvestmentModal(200)">استثمر</button>
+      </div>
+
+    </div>
+
+    <div class="section-title">استثماراتك</div>
+    <div id="investmentsList">جاري التحميل...</div>
+
+  </div>
+
+  <!-- شريط التنقل -->
+  <div class="bottom-nav">
+    <a href="index.html" class="active">📈</a>
+    <a href="wallet.html">💼</a>
+    <a href="profile.html">👤</a>
+    <a href="dashboard.html">⚙️</a>
+  </div>
+
+  <!-- نافذة الإيداع -->
+  <div class="modal-backdrop" id="modalDeposit">
+    <div class="modal">
+      <h3>تأكيد الإيداع</h3>
+
+      <p>المبلغ: <span id="modalAmount"></span> USDT</p>
+
+      <p>محفظة الإدارة (TRC20):</p>
+      <div class="address-box">TPNoGerv1EMBSdrs9Yca93eCQUVsoNiRvq</div>
+
+      <label>رقم العملية (TXID):</label>
+      <input id="txidInput" class="input" placeholder="ألصق رقم العملية هنا">
+
+      <button class="button-primary" onclick="submitDeposit()">تسجيل الإيداع</button>
+      <button class="button-secondary" onclick="closeModal()">إغلاق</button>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>

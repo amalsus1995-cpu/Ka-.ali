@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>المحفظة - Bitcoin Cash</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+  <div class="app">
+
+    <div class="header">
+      <div class="logo">Bitcoin Cash</div>
+      <div class="user-box">
+        <div class="user-dot"></div>
+        <span id="userName">جاري التحميل...</span>
+      </div>
+    </div>
+
+    <div class="balance-card">
+      <div class="balance-title">رصيدك القابل للسحب</div>
+      <div class="balance-value" id="walletBalance">0.00 USDT</div>
+      <div class="network-pill">
+        <div class="network-dot"></div>
+        <span>USDT TRC20</span>
+      </div>
+    </div>
+
+    <div class="section-title">عنوان محفظتك</div>
+    <div class="address-box" id="userWallet">
+      لم يتم إدخال عنوان بعد
+    </div>
+
+    <div class="section-title">عملياتك</div>
+    <div id="transactionsList">جاري التحميل...</div>
+
+    <div class="section-title">طلب سحب</div>
+
+    <input id="withdrawAddress" class="input" placeholder="أدخل عنوان محفظتك USDT TRC20">
+    <input id="withdrawAmount" class="input" type="number" placeholder="أدخل المبلغ">
+
+    <button class="button-primary" onclick="requestWithdraw()">
+      إرسال طلب السحب
+    </button>
+
+    <p class="small-text">
+      ⚠️ ملاحظة: لا يمكن سحب أي مبلغ قبل مرور 27 يوم من أول استثمار.
+    </p>
+
+  </div>
+
+  <!-- شريط التنقل -->
+  <div class="bottom-nav">
+    <a href="index.html">📈</a>
+    <a href="wallet.html" class="active">💼</a>
+    <a href="profile.html">👤</a>
+    <a href="dashboard.html">⚙️</a>
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>

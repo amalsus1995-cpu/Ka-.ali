@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>الملف الشخصي - Bitcoin Cash</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+  <div class="app">
+
+    <div class="header">
+      <div class="logo">Bitcoin Cash</div>
+      <div class="user-box">
+        <div class="user-dot"></div>
+        <span id="userName">جاري التحميل...</span>
+      </div>
+    </div>
+
+    <div class="section-title">معلومات الحساب</div>
+
+    <div class="list">
+
+      <div class="list-item">
+        <span>البريد الإلكتروني</span>
+        <span id="profileEmail">...</span>
+      </div>
+
+      <div class="list-item">
+        <span>تاريخ إنشاء الحساب</span>
+        <span id="profileCreated">...</span>
+      </div>
+
+    </div>
+
+    <div class="section-title">تغيير كلمة المرور</div>
+
+    <input id="newPassword" class="input" type="password"
+           placeholder="أدخل كلمة المرور الجديدة">
+
+    <button class="button-primary" onclick="changePassword()">
+      تغيير كلمة المرور
+    </button>
+
+    <div class="section-title">الإجراءات</div>
+
+    <button class="button-secondary" onclick="logout()"
+      style="background:#dc2626; color:white;">
+      تسجيل الخروج
+    </button>
+
+  </div>
+
+  <!-- شريط التنقل -->
+  <div class="bottom-nav">
+    <a href="index.html">📈</a>
+    <a href="wallet.html">💼</a>
+    <a href="profile.html" class="active">👤</a>
+    <a href="dashboard.html">⚙️</a>
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
